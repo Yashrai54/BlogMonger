@@ -7,10 +7,12 @@ const mongoose=require('mongoose')
 const userRouter=require('./routes/user');
 const { checkforcookie } = require('./middlewares/auth');
 const blogRouter=require('./routes/blog')
+require('dotenv').config();
+
 
 const PORT=process.env.PORT;
 
-mongoose.connect(process.env.MONGO_URL).then(e=>console.log('mongo connected'))
+mongoose.connect(process.env.MONGO_URI).then(e=>console.log('mongo connected'))
 app.set("view engine","ejs")
 app.set("views",path.resolve("./views"))
 app.use(express.urlencoded({extended:false}))
