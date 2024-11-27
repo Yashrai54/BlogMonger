@@ -1,5 +1,5 @@
 const jwt=require('jsonwebtoken')
-const secret="yash20005y"
+const secret=process.env.SECRET_KEY
 
 function createTokenUser(user){
      const payload={
